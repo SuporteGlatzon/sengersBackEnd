@@ -1,0 +1,8 @@
+/node_modules/
+/vendor/
+
+.env
+.env.testing
+
+conf/nginx/cors.conf
+conf/nginx/nginx-site.conf

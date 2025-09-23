@@ -1,0 +1,2318 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/city/{state_id}": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "d23222e86e4cab39b15a96a8da9495c4",
+                "parameters": [
+                    {
+                        "name": "state_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/client/{client_id}": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "71ba5c364dae8b6c3d041ed6ea2c7752",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "image": {
+                                            "type": "string"
+                                        },
+                                        "phone": {
+                                            "type": "string"
+                                        },
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "complement": {
+                                            "type": "string"
+                                        },
+                                        "state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "city": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "full_description": {
+                                            "type": "string"
+                                        },
+                                        "link_site": {
+                                            "type": "string"
+                                        },
+                                        "link_instagram": {
+                                            "type": "string"
+                                        },
+                                        "link_twitter": {
+                                            "type": "string"
+                                        },
+                                        "link_linkedin": {
+                                            "type": "string"
+                                        },
+                                        "banner_profile": {
+                                            "type": "string"
+                                        },
+                                        "curriculum": {
+                                            "type": "string"
+                                        },
+                                        "educations": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "course": {
+                                                        "type": "string"
+                                                    },
+                                                    "institution": {
+                                                        "type": "string"
+                                                    },
+                                                    "conclusion_at": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "current_situation": {
+                                                        "type": "string"
+                                                    },
+                                                    "observation": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/home": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "4ae2920c0ae23bcd363a60da81a1d4ef",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "banner": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "subtitle": {
+                                                        "type": "string"
+                                                    },
+                                                    "button_link": {
+                                                        "type": "string"
+                                                    },
+                                                    "button_text": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "associates": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "subtitle": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "orange_text": {
+                                                        "type": "string"
+                                                    },
+                                                    "title_right": {
+                                                        "type": "string"
+                                                    },
+                                                    "button_link": {
+                                                        "type": "string"
+                                                    },
+                                                    "button_text": {
+                                                        "type": "string"
+                                                    },
+                                                    "advantages": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "anyOf": [
+                                                                {
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "book_rooms": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "orange_text": {
+                                                        "type": "string"
+                                                    },
+                                                    "title_right": {
+                                                        "type": "string"
+                                                    },
+                                                    "room": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "anyOf": [
+                                                                {
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    "button_link": {
+                                                        "type": "string"
+                                                    },
+                                                    "button_text": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/occupation-area": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "72484da8d69a7c974da1f1461ae2f82a",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "eadb374d4b7d049ea02a216c40ddaa80",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/occupation-area/{occupation_area_id}": {
+            "put": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "978b190f310125f103edfeb155d4156b",
+                "parameters": [
+                    {
+                        "name": "occupation_area_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "31c437850c5057926d20a0562b8d4760",
+                "parameters": [
+                    {
+                        "name": "occupation_area_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/opportunity": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "6ee17839934111bdb9511f3e5178ccd4",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "city_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "state_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "opportunity_type_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "occupation_area_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "cnpj": {
+                                                "type": "string"
+                                            },
+                                            "state": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "letter": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "city": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "letter": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "full_description": {
+                                                "type": "string"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "format": "date"
+                                            },
+                                            "salary": {
+                                                "type": "string"
+                                            },
+                                            "published_by": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "phone": {
+                                                        "type": "string"
+                                                    },
+                                                    "address": {
+                                                        "type": "string"
+                                                    },
+                                                    "complement": {
+                                                        "type": "string"
+                                                    },
+                                                    "state": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "city": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "candidates": {
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "email": {
+                                                            "type": "string"
+                                                        },
+                                                        "phone": {
+                                                            "type": "string"
+                                                        },
+                                                        "image": {
+                                                            "type": "string"
+                                                        },
+                                                        "created_at": {
+                                                            "type": "string",
+                                                            "format": "date-time"
+                                                        },
+                                                        "vewed_at": {
+                                                            "type": "string",
+                                                            "format": "date"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "occupation_area": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/opportunity/{opportunity_id}": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "fa182ddfe61c7e99d1db96fa61b18c9f",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "company": {
+                                            "type": "string"
+                                        },
+                                        "cnpj": {
+                                            "type": "string"
+                                        },
+                                        "state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "city": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "full_description": {
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "situation": {
+                                            "type": "string"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "salary": {
+                                            "type": "string"
+                                        },
+                                        "published_by": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "image": {
+                                                    "type": "string"
+                                                },
+                                                "phone": {
+                                                    "type": "string"
+                                                },
+                                                "address": {
+                                                    "type": "string"
+                                                },
+                                                "complement": {
+                                                    "type": "string"
+                                                },
+                                                "state": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "letter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "city": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "letter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "description": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "candidates": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "phone": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "vewed_at": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "occupation_area": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/opportunity-type": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "da64c66e5cb752de64895d6d7bc1e006",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "16eeaed289d6dc0d0127cb92439d0451",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/opportunity-type/{opportunity_type_id}": {
+            "put": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "6fdfc0d62318320f1bed4e1247b23cde",
+                "parameters": [
+                    {
+                        "name": "opportunity_type_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "0f6118c752540bf2138a1ed4d2cd8f4c",
+                "parameters": [
+                    {
+                        "name": "opportunity_type_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile": {
+            "get": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "defe30a264a1a0c610b5725c8798a93a",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "cpf": {
+                                            "type": "string"
+                                        },
+                                        "code_crea": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "image": {
+                                            "type": "string"
+                                        },
+                                        "phone": {
+                                            "type": "string"
+                                        },
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "complement": {
+                                            "type": "string"
+                                        },
+                                        "state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "city": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "full_description": {
+                                            "type": "string"
+                                        },
+                                        "link_site": {
+                                            "type": "string"
+                                        },
+                                        "link_instagram": {
+                                            "type": "string"
+                                        },
+                                        "link_twitter": {
+                                            "type": "string"
+                                        },
+                                        "link_linkedin": {
+                                            "type": "string"
+                                        },
+                                        "banner_profile": {
+                                            "type": "string"
+                                        },
+                                        "curriculum": {
+                                            "type": "string"
+                                        },
+                                        "educations": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "course": {
+                                                        "type": "string"
+                                                    },
+                                                    "institution": {
+                                                        "type": "string"
+                                                    },
+                                                    "conclusion_at": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "current_situation": {
+                                                        "type": "string"
+                                                    },
+                                                    "observation": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "opportunities": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "company": {
+                                                        "type": "string"
+                                                    },
+                                                    "cnpj": {
+                                                        "type": "string"
+                                                    },
+                                                    "state": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "city": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "full_description": {
+                                                        "type": "string"
+                                                    },
+                                                    "status": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "situation": {
+                                                        "type": "string"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "salary": {
+                                                        "type": "string"
+                                                    },
+                                                    "published_by": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "name": {
+                                                                "type": "string"
+                                                            },
+                                                            "image": {
+                                                                "type": "string"
+                                                            },
+                                                            "phone": {
+                                                                "type": "string"
+                                                            },
+                                                            "address": {
+                                                                "type": "string"
+                                                            },
+                                                            "complement": {
+                                                                "type": "string"
+                                                            },
+                                                            "state": {
+                                                                "properties": {
+                                                                    "id": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "title": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "letter": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "city": {
+                                                                "properties": {
+                                                                    "id": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "title": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "letter": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "description": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "candidates": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id": {
+                                                                    "type": "integer"
+                                                                },
+                                                                "name": {
+                                                                    "type": "string"
+                                                                },
+                                                                "email": {
+                                                                    "type": "string"
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string"
+                                                                },
+                                                                "image": {
+                                                                    "type": "string"
+                                                                },
+                                                                "created_at": {
+                                                                    "type": "string",
+                                                                    "format": "date-time"
+                                                                },
+                                                                "vewed_at": {
+                                                                    "type": "string",
+                                                                    "format": "date"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "occupation_area": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "opportunities_applied": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "company": {
+                                                        "type": "string"
+                                                    },
+                                                    "cnpj": {
+                                                        "type": "string"
+                                                    },
+                                                    "state": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "city": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            },
+                                                            "letter": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "full_description": {
+                                                        "type": "string"
+                                                    },
+                                                    "status": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "situation": {
+                                                        "type": "string"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "salary": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "occupation_area": {
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "title": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "56162de6c8a3b48291aee6cf5d6ee14a",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "_method": {
+                                        "type": "string",
+                                        "example": "PUT"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "code_crea": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "full_description": {
+                                        "type": "string"
+                                    },
+                                    "banner_profile": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "senge_associate": {
+                                        "type": "integer"
+                                    },
+                                    "curriculum": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "state_id": {
+                                        "type": "integer"
+                                    },
+                                    "city_id": {
+                                        "type": "integer"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "complement": {
+                                        "type": "string"
+                                    },
+                                    "link_site": {
+                                        "type": "string"
+                                    },
+                                    "link_instagram": {
+                                        "type": "string"
+                                    },
+                                    "link_twitter": {
+                                        "type": "string"
+                                    },
+                                    "link_linkedin": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/opportunity": {
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "ee7d404c90e28854864f454bed92d82d",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "company": {
+                                        "type": "string"
+                                    },
+                                    "cnpj": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "state_id": {
+                                        "type": "integer"
+                                    },
+                                    "city_id": {
+                                        "type": "integer"
+                                    },
+                                    "date": {
+                                        "type": "string"
+                                    },
+                                    "salary": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "full_description": {
+                                        "type": "string"
+                                    },
+                                    "opportunity_type_id": {
+                                        "type": "integer"
+                                    },
+                                    "occupation_area_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/opportunity/{opportunity_id}": {
+            "get": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "c079eec3e50a81fa197303dec2c75827",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "company": {
+                                            "type": "string"
+                                        },
+                                        "cnpj": {
+                                            "type": "string"
+                                        },
+                                        "state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "city": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "full_description": {
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "situation": {
+                                            "type": "string"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "salary": {
+                                            "type": "string"
+                                        },
+                                        "published_by": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "image": {
+                                                    "type": "string"
+                                                },
+                                                "phone": {
+                                                    "type": "string"
+                                                },
+                                                "address": {
+                                                    "type": "string"
+                                                },
+                                                "complement": {
+                                                    "type": "string"
+                                                },
+                                                "state": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "letter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "city": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "letter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "description": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "candidates": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "phone": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "vewed_at": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "occupation_area": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "c47ef112e4743e2bdf63f7ee71c2f2d8",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "company": {
+                                        "type": "string"
+                                    },
+                                    "cnpj": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "state_id": {
+                                        "type": "integer"
+                                    },
+                                    "city_id": {
+                                        "type": "integer"
+                                    },
+                                    "date": {
+                                        "type": "string"
+                                    },
+                                    "salary": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "full_description": {
+                                        "type": "string"
+                                    },
+                                    "opportunity_type_id": {
+                                        "type": "integer"
+                                    },
+                                    "occupation_area_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "35c9c86a2132f90f00977ecd1539822a",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/opportunities-applied/{opportunity_id}": {
+            "get": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "defb71281987fc04777b062498eabcd7",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "company": {
+                                            "type": "string"
+                                        },
+                                        "cnpj": {
+                                            "type": "string"
+                                        },
+                                        "state": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "city": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "letter": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "full_description": {
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "situation": {
+                                            "type": "string"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "salary": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "occupation_area": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/opportunity/{opportunity_id}/associate": {
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "b8254238fb324269c650144ae73f6796",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "2e39e3120e0f7f7ee7dc11674320ee23",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/opportunity/{opportunity_id}/viewed": {
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "bcc8745a90c9768dbd30bad00b83e871",
+                "parameters": [
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "candidate_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/education": {
+            "post": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "d8dcf3f3d4f3146e78de4691b7f9d57d",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "course": {
+                                        "type": "string"
+                                    },
+                                    "institution": {
+                                        "type": "string"
+                                    },
+                                    "conclusion_at": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "current_situation": {
+                                        "type": "string",
+                                        "example": "interrupted,in_progress,done"
+                                    },
+                                    "observation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/education/{education_id}": {
+            "put": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "1125adf753f0be7b4b4bdbb04740a93f",
+                "parameters": [
+                    {
+                        "name": "education_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "course": {
+                                        "type": "string"
+                                    },
+                                    "institution": {
+                                        "type": "string"
+                                    },
+                                    "conclusion_at": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "current_situation": {
+                                        "type": "string",
+                                        "example": "interrupted,in_progress,done"
+                                    },
+                                    "observation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authenticated"
+                ],
+                "operationId": "8254a1f235dbee0bceff1d974ae5a036",
+                "parameters": [
+                    {
+                        "name": "education_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/settings": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "04b6f539c3af7d460d214177ac396d5e",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/oauth/token": {
+            "post": {
+                "tags": [
+                    "Generate Token"
+                ],
+                "operationId": "daaedc480f88fa48a07e97f02d1c73c0",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "provider": {
+                                                "type": "string"
+                                            },
+                                            "access_token": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "provider": "google,linkedin-openid",
+                                    "access_token": "QaOZIgwwwgn6jFppLxchadjUpm3EQWiBNaYjFvEZMFqvQaxpxxL75SoAzECkzyD5mxvnjZr3aKBDFGVZ5FGlINY1CaU87HSrfY0yEUjnx8qnO4cV9zQLrS74ft3tx44DSBs4jj2GdeSh87dLw7wN81vAeASe6ZFJOyyji75tiXGZAV8VWmRCaQsLnO3I0lS9th1mhsKTtwP9lhxzuviSNeHVfm"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string",
+                                            "example": "eyJhdWQiOiIxIiwianRpIjoiOWY2NmQ1YWNjZDZmNDNjMGFiMzY5ZjUyMDMyNGI2ZDlhOTEzZTFmNTU3YzJiNTY2MGU1ZDZiOTg0ZjA2Y2I1ZDZlZTBlMjY0Nzc5NjlkNTIiLCJpYXQiOjE3MTE1NzE1NDUuNzU5ODY3LCJuYmYiOjE3MTE1NzE1NDUuNzU5ODcxLCJleHAiOjE3NDMxMDc1NDUuNzQ1NzA0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.gfwXmuHMcwy1i4nnmCuST60LeIHhkcD_5si8nwg-7odwOJzJaQCjlyFqo8PKFIXlOyBQZN7fI9iq1sXVW2-UnDOogZ6aWljo_aHM-oQxs4DiItQ2OYp44duet61RXIp1_MR5ds_EHlIFEn2hymELh7cu4tqlWWF43qsFpZPODYZ4UkLhpD1yrQInrGADZ7VJ42SkBLdpg6sx80UuB9sAnXFbiTi_YaaHCFYmtkvHlpO5IcyRB10SSLHXSy0WmZS24xZNxoH4bD1K_-tXzytgeTcwOXV4M0KgFr633ro62I48gEU7J8nVHuzweE9mXXeia8vQWjV_Pkwzl_gzTHSv3Br1HSbvCLIrKj2c0lo1f1weoFKBKtJMVFpSfE_E9LTbbgqausL62CLxLsP1MnYyg-qRyFDWdlvybKkm8Lc9xpV0tIb70t2hgTmWRSNTVaeb5FEheExJgoVVUwUD_4pOC51cj3SCqlI5QFvLPhjVsJ1z9XKBBniw3fGgOlJOtN9VQtqmjaG4Qx9Soic1BIN1D9xJnfLrO507rjo47llv_A0-DmSxAYARkJ2uiUiSzuzi1-MfJyvlJx0e82_LPyCp-bupxdrnh6icaNa0T1NAT5Y-8yqUB31cSi7Z0Hk54GdIng9EwewiVoctEsVH4vO7Ae53m4i12sKro3WDBJS98FY"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Client error: `GET https://www.googleapis.com/oauth2/v3/userinfo?prettyPrint=false` resulted in a `401 Unauthorized`"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/state": {
+            "get": {
+                "tags": [
+                    "Unauthenticated"
+                ],
+                "operationId": "b6c9e514d74150c4a1babfb8ab1f990e",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "letter": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Services\ClientService;
+
+class ClientController extends Controller
+{
+    /**
+     * @OA\Get (
+     *     path="/api/client/{client_id}",
+     *     tags={"Unauthenticated"},
+     *     @OA\Parameter(
+     *         in="path",
+     *         name="client_id",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="success",
+     *          @OA\JsonContent(
+     *               type="object",
+     *               @OA\Property(
+     *                   property="name",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="image",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="phone",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="address",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="complement",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="state",
+     *                   type="object",
+     *                   @OA\Property(
+     *                       property="id",
+     *                       type="integer"
+     *                   ),
+     *                   @OA\Property(
+     *                       property="title",
+     *                       type="string"
+     *                   ),
+     *                   @OA\Property(
+     *                       property="letter",
+     *                       type="string"
+     *                   ),
+     *               ),
+     *               @OA\Property(
+     *                   property="city",
+     *                   type="object",
+     *                   @OA\Property(
+     *                       property="id",
+     *                       type="integer"
+     *                   ),
+     *                   @OA\Property(
+     *                       property="title",
+     *                       type="string"
+     *                   ),
+     *               ),
+     *               @OA\Property(
+     *                   property="description",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="full_description",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="link_site",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="link_instagram",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="link_twitter",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="link_linkedin",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="banner_profile",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="curriculum",
+     *                   type="string"
+     *               ),
+     *               @OA\Property(
+     *                   property="educations",
+     *                   type="array",
+     *                   @OA\Items(
+     *                       type="object",
+     *                       @OA\Property(
+     *                         property="id",
+     *                         type="integer"
+     *                       ),
+     *                       @OA\Property(
+     *                         property="course",
+     *                         type="string"
+     *                       ),
+     *                       @OA\Property(
+     *                         property="institution",
+     *                         type="string"
+     *                       ),
+     *                       @OA\Property(
+     *                         property="conclusion_at",
+     *                         type="date"
+     *                       ),
+     *                       @OA\Property(
+     *                         property="current_situation",
+     *                         type="string"
+     *                       ),
+     *                       @OA\Property(
+     *                         property="observation",
+     *                         type="string"
+     *                       )
+     *                   )
+     *               )
+     *           )
+     *      )
+     * )
+     */
+    public function show(ClientService $service, $id)
+    {
+        return $service->show($id);
+    }
+}
