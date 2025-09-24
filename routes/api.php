@@ -12,6 +12,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BannerController; // ✅ import do BannerController
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
+| Aqui você registra as rotas da API.
+| Todas são carregadas pelo RouteServiceProvider e recebem o prefixo /api
 |
 */
 
@@ -132,7 +132,6 @@ Route::get('curriculum/{filename}', function ($filename) {
     return response()->file($file);
 });
 
-
 // Public routes
 Route::get("users", [UserController::class, "index"]);
 Route::get("home", [HomeController::class, "index"]);
@@ -176,3 +175,6 @@ Route::post("send-opportunity-email/{opportunity_id}", [
 Route::get("settings", [SettingController::class, "index"]);
 
 Route::get("integrator-section", [IntegratorSectionController::class, "index"]);
+
+// ✅ Rotas do Banner
+Route::apiResource('banners', BannerController::class);
