@@ -12,7 +12,9 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\BannerController; // ✅ import do BannerController
+use App\Http\Controllers\BannerController; 
+use App\Http\Controllers\HomeAssociateController; // ✅ import
+use App\Http\Controllers\HomeBookRoomController; // ✅ import
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -178,3 +180,7 @@ Route::get("integrator-section", [IntegratorSectionController::class, "index"]);
 
 // ✅ Rotas do Banner
 Route::apiResource('banners', BannerController::class);
+
+// ✅ Rotas de HomeAssociate e HomeBookRoom
+Route::apiResource('home-associates', HomeAssociateController::class);
+Route::apiResource('home-book-rooms', HomeBookRoomController::class);
